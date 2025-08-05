@@ -10,7 +10,8 @@ app.Configuration.Bind("Secrets", secrets);
 app.MapGet("/", () => new
 {
     ConnectionString = connectionString,
-    Secrets = secrets
+    Secrets = secrets,
+    apiUrl = app.Configuration["ApiUrl"]
 });
 
 app.Run();
